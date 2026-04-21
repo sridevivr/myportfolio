@@ -150,22 +150,22 @@
      position at narrower widths instead of keeping portrait everywhere. */
   .photo-frame {
     width: 100%;
-    max-width: 640px;
-    aspect-ratio: 3 / 2;      /* landscape-ish — wide, not tall */
+    max-width: 560px;
+    aspect-ratio: 4 / 3;      /* taller than 3/2 — shows face + shoulders */
     margin-left: auto;
     margin-right: auto;
   }
   .photo-frame img {
     object-fit: cover;
-    object-position: center 35%;  /* bias upward → keep face, drop torso */
+    object-position: center 40%;  /* keep face, but show more torso than before */
   }
 
   /* Slightly taller photo on small tablets for a bit more presence */
   @media (min-width: 640px) {
     .photo-frame {
-      aspect-ratio: 16 / 10;
-      max-width: 720px;
-      max-height: 460px;
+      aspect-ratio: 4 / 3;
+      max-width: 680px;
+      max-height: 520px;
     }
   }
 
