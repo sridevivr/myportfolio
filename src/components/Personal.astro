@@ -1,0 +1,142 @@
+---
+// Personal — reading, coffee, writing. A bit more about me section.
+//
+// NOTE (Sridevi): book covers — save JPGs at
+//   public/books/project-hail-mary.jpg
+//   public/books/the-tainted-cup.jpg
+// (grab covers from Goodreads, Amazon, or Open Library). Until those files
+// exist, the book cover slots will show a placeholder.
+---
+
+<section id="personal" class="section-anchor border-t border-neutral-200 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-950">
+  <div class="mx-auto max-w-content px-6 py-20 md:py-24">
+    <p class="kicker mb-4">Personal</p>
+    <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">
+      A bit more about me
+    </h2>
+
+    <div class="mt-12 grid gap-10 md:gap-8 md:grid-cols-3">
+
+      <!-- Reading -->
+      <div>
+        <h3 class="font-mono text-sm uppercase tracking-[0.14em] text-ink-muted dark:text-neutral-400 mb-4">
+          Reading
+        </h3>
+        <p class="text-ink-muted dark:text-neutral-300 leading-relaxed mb-5">
+          I read a lot &mdash; fiction mostly, plus a steady drip of non-fiction. My
+          <a
+            href="https://www.goodreads.com/user/show/26064783-sridevi-raghavan"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-accent hover:text-accent-hover dark:text-indigo-400 dark:hover:text-indigo-300 underline decoration-accent/40 underline-offset-2"
+          >Goodreads</a>
+          has the full archive.
+        </p>
+
+        <p class="font-mono text-xs uppercase tracking-[0.14em] text-ink-subtle dark:text-neutral-500 mb-3">
+          Recently finished
+        </p>
+        <div class="flex gap-3">
+          <figure class="flex flex-col gap-2 w-24">
+            <div class="aspect-[2/3] overflow-hidden rounded-sm bg-neutral-200 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-800">
+              <img
+                src="/books/Project-Hail-Mary.png"
+                alt="Project Hail Mary by Andy Weir"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            <figcaption class="text-xs leading-snug text-ink-muted dark:text-neutral-400">
+              Project Hail Mary<br/>
+              <span class="text-ink-subtle dark:text-neutral-500">Andy Weir</span>
+            </figcaption>
+          </figure>
+          <figure class="flex flex-col gap-2 w-24">
+            <div class="aspect-[2/3] overflow-hidden rounded-sm bg-neutral-200 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-800">
+              <img
+                src="/books/Tainted-Cup.png"
+                alt="The Tainted Cup by Robert Jackson Bennett"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            <figcaption class="text-xs leading-snug text-ink-muted dark:text-neutral-400">
+              The Tainted Cup<br/>
+              <span class="text-ink-subtle dark:text-neutral-500">Robert J. Bennett</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- Coffee -->
+      <div>
+        <h3 class="font-mono text-sm uppercase tracking-[0.14em] text-ink-muted dark:text-neutral-400 mb-4">
+          Coffee
+        </h3>
+        <div class="aspect-[4/3] overflow-hidden rounded-md bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 mb-4">
+          <img
+            src="/coffee.jpeg"
+            alt="South Indian filter coffee"
+            class="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+        <p class="text-ink-muted dark:text-neutral-300 leading-relaxed">
+          South Indian filter coffee, almost daily. Steel tumbler, dabarah,
+          thick decoction, boiling milk. Nothing else comes close.
+        </p>
+      </div>
+
+      <!-- Writing -->
+      <div>
+        <h3 class="font-mono text-sm uppercase tracking-[0.14em] text-ink-muted dark:text-neutral-400 mb-4">
+          Writing
+        </h3>
+        <p class="text-ink-muted dark:text-neutral-300 leading-relaxed mb-5">
+          Two places I publish:
+        </p>
+        <ul class="space-y-3">
+          <li>
+            <a
+              href="https://themoneywellnessstudio.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-3 rounded-md border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 p-4 hover:border-neutral-300 dark:hover:border-neutral-700 transition"
+            >
+              <img
+                src="/logo/the-money-wellness-studio.png"
+                alt="The Money Wellness Studio logo"
+                class="h-10 w-10 rounded object-contain shrink-0"
+                loading="lazy"
+              />
+              <span class="flex flex-col min-w-0">
+                <span class="text-sm font-semibold text-ink dark:text-neutral-100">
+                  The Money Wellness Studio
+                </span>
+                <span class="mt-0.5 text-xs text-ink-muted dark:text-neutral-400">
+                  Personal finance, written for real life.
+                </span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://impulsedinertia.substack.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block rounded-md border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 p-4 hover:border-neutral-300 dark:hover:border-neutral-700 transition"
+            >
+              <p class="text-sm font-semibold text-ink dark:text-neutral-100">
+                Impulsed Inertia
+              </p>
+              <p class="mt-1 text-xs text-ink-muted dark:text-neutral-400">
+                Notes from building with AI &mdash; what works, what breaks.
+              </p>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>

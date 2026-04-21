@@ -1,0 +1,213 @@
+---
+// Hero — photo + writeup using CSS grid-template-areas for responsive reflow.
+//
+// Layout behavior:
+//   • <lg (phone + tablet): single column. Order is
+//       heading → photo → body → cta
+//     So the photo sits BETWEEN the name/intro block and the body copy,
+//     rather than getting dumped on top of a long text scroll. The HTML
+//     order never changes, only the grid areas reflow at the breakpoint.
+//   • ≥lg (desktop): two columns. Photo LEFT, spanning all rows; heading,
+//     body, and CTA stacked in the RIGHT column.
+//
+// TODO (Sridevi): paragraphs below are your edited version. Tune freely.
+//
+// Alternatives to the current subtitle ("A systems mind, now building with AI."):
+//   • "A strategic operator, now building with AI."
+//   • "Structurer of complex programs, now building with AI."
+//   • (or drop it entirely)
+//
+// Paragraph 2 closing line alternatives (current: "Shipping them is how I'm
+// learning what this new toolchain can and can't do."):
+//   • "Each one is a way of finding out, hands-on, where this toolchain
+//      holds up and where it doesn't."
+//   • "They're how I'm figuring out what this toolchain is actually
+//      good at."
+---
+
+<section class="px-6 md:px-10 pt-16 md:pt-24 pb-8 md:pb-12">
+  <div class="mx-auto w-full max-w-6xl">
+    <div class="hero-grid">
+
+      <!-- HEADING area: kicker, name, subtitle, credentials, "open to new roles" badge -->
+      <div class="hero-area-heading flex flex-col">
+        <p class="font-mono text-sm text-ink-muted dark:text-neutral-400 mb-3">
+          Hi, I'm Sri.
+        </p>
+
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-tight">
+          Sridevi<br class="hidden lg:block"/> Vijayaraghavan
+        </h1>
+
+        <p class="mt-5 text-lg md:text-xl text-ink dark:text-neutral-100 font-medium">
+          A systems mind, now building with AI.
+        </p>
+
+        <p class="mt-2 font-mono text-xs uppercase tracking-[0.18em] text-ink-subtle dark:text-neutral-500">
+          Ex&ndash;VMware &middot; Dartmouth MBA
+        </p>
+
+        <div class="mt-5 inline-flex self-start items-center gap-2 rounded-full bg-accent-subtle dark:bg-indigo-950/40 border border-accent/20 dark:border-indigo-800/40 px-3 py-1 text-xs font-medium text-accent dark:text-indigo-300">
+          <span class="relative flex h-2 w-2">
+            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60"></span>
+            <span class="relative inline-flex h-2 w-2 rounded-full bg-accent"></span>
+          </span>
+          Open to new roles
+        </div>
+      </div>
+
+      <!-- PHOTO area: one element, reflows across breakpoints via grid-area -->
+      <div class="hero-area-photo">
+        <div class="photo-frame relative overflow-hidden rounded-md border border-neutral-200 dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-900">
+          <img
+            src="/me.jpeg"
+            alt="Sridevi Vijayaraghavan"
+            class="w-full h-full object-cover"
+            loading="eager"
+          />
+        </div>
+      </div>
+
+      <!-- BODY: the three paragraphs -->
+      <div class="hero-area-body max-w-2xl space-y-4 text-[1.05rem] leading-relaxed text-ink-muted dark:text-neutral-300">
+        <p>
+          I spent ~6 years at VMware as a Technical Program Manager,
+          orchestrating complex release programs across large engineering
+          orgs. I went to Tuck for an MBA &mdash; business fundamentals,
+          with an emphasis on strategy, entrepreneurship, and venture.
+          Somewhere in the middle of all that, generative AI reset what
+          one person could build alone.
+        </p>
+        <p>
+          So I've been building: a gamified system-design curriculum with a
+          real pedagogy, a museum-style web experience about cinema and
+          technology, a pricing intelligence dashboard that pulls structure
+          out of scraped SaaS pages with an LLM. Shipping them is how I'm
+          learning what this new toolchain can and can't do.
+        </p>
+        <p>
+          I'm open to new roles &mdash; where I can structure processes,
+          leverage AI, stand up functions, and above all, keep learning.
+          <a
+            href="mailto:vijayaraghavansridevi@gmail.com"
+            class="text-accent hover:text-accent-hover dark:text-indigo-400 dark:hover:text-indigo-300 transition underline decoration-accent/40 underline-offset-2"
+          >Say hi</a>
+          if that sounds like what you're hiring for.
+        </p>
+      </div>
+
+      <!-- CTA buttons -->
+      <div class="hero-area-cta flex flex-wrap gap-3">
+        <a
+          href="#projects"
+          class="inline-flex items-center gap-2 rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-white hover:bg-accent-hover transition"
+        >
+          See projects
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+        <a
+          href="#contact"
+          class="inline-flex items-center gap-2 rounded-md border border-neutral-200 dark:border-neutral-800 px-5 py-2.5 text-sm font-medium text-ink dark:text-neutral-100 hover:border-neutral-300 dark:hover:border-neutral-700 transition"
+        >
+          Get in touch
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ----------------------------------------------------------------------
+     Base (mobile + tablet, <lg): single column.
+     HTML order stays the same; grid-template-areas places the photo
+     between heading and body.
+     ---------------------------------------------------------------------- */
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "heading"
+      "photo"
+      "body"
+      "cta";
+  }
+
+  .hero-area-heading { grid-area: heading; }
+  .hero-area-photo   { grid-area: photo;   }
+  .hero-area-body    { grid-area: body;    }
+  .hero-area-cta     { grid-area: cta;     }
+
+  /* Vertical rhythm between the four areas in single-column mode */
+  .hero-area-photo { margin-top: 1.75rem; }
+  .hero-area-body  { margin-top: 1.5rem;  }
+  .hero-area-cta   { margin-top: 2.25rem; }
+
+  /* Photo frame — single-column (phone + tablet):
+     Use a short, landscape-ish aspect so the photo doesn't dominate the
+     viewport and push body copy below the fold. object-position crops
+     from the bottom, keeping the face in frame — swap aspect + crop
+     position at narrower widths instead of keeping portrait everywhere. */
+  .photo-frame {
+    width: 100%;
+    max-width: 640px;
+    aspect-ratio: 3 / 2;      /* landscape-ish — wide, not tall */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .photo-frame img {
+    object-fit: cover;
+    object-position: center 35%;  /* bias upward → keep face, drop torso */
+  }
+
+  /* Slightly taller photo on small tablets for a bit more presence */
+  @media (min-width: 640px) {
+    .photo-frame {
+      aspect-ratio: 16 / 10;
+      max-width: 720px;
+      max-height: 460px;
+    }
+  }
+
+  /* ----------------------------------------------------------------------
+     Desktop (≥lg, 1024px+): two columns.
+     Photo spans all three rows on the LEFT; text column stacks on the RIGHT.
+     ---------------------------------------------------------------------- */
+  @media (min-width: 1024px) {
+    .hero-grid {
+      grid-template-columns: auto 1fr;
+      column-gap: 3.5rem;
+      grid-template-areas:
+        "photo heading"
+        "photo body"
+        "photo cta";
+    }
+
+    /* Reset the single-column spacing that we added above. */
+    .hero-area-photo { margin-top: 3.5rem; align-self: start; }
+    .hero-area-body  { margin-top: 2rem;   }
+    .hero-area-cta   { margin-top: 2.5rem; }
+
+    /* Photo becomes fixed-size portrait at desktop — full frame */
+    .photo-frame {
+      width: 410px;
+      max-width: none;
+      max-height: none;
+      height: 570px;
+      aspect-ratio: auto;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .photo-frame img {
+      object-position: center center;  /* restore full portrait framing */
+    }
+  }
+
+  /* Slightly larger photo at xl+ for big monitors (optional polish) */
+  @media (min-width: 1280px) {
+    .photo-frame {
+      width: 440px;
+      height: 610px;
+    }
+  }
+</style>

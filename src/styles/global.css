@@ -1,0 +1,55 @@
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/500.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-ink antialiased;
+    font-feature-settings: 'cv11', 'ss01', 'ss03';
+  }
+
+  .dark body {
+    @apply bg-neutral-950 text-neutral-100;
+  }
+
+  /* Consistent heading rhythm; keeps layout tight without overriding Tailwind text sizes. */
+  h1, h2, h3 {
+    @apply tracking-tight;
+  }
+}
+
+@layer components {
+  /* Monospace kicker — the uppercase label above section headings and project titles. */
+  .kicker {
+    @apply font-mono text-xs uppercase tracking-[0.18em] text-ink-subtle;
+  }
+
+  .dark .kicker {
+    @apply text-neutral-400;
+  }
+
+  /* Pill tag — used for tech-stack chips. */
+  .tag {
+    @apply inline-flex items-center rounded-md bg-neutral-100 px-2 py-0.5 font-mono text-xs text-ink-muted;
+  }
+
+  .dark .tag {
+    @apply bg-neutral-800 text-neutral-300;
+  }
+
+  /* Section anchor offset so smooth-scroll lands below any fixed nav. */
+  .section-anchor {
+    scroll-margin-top: 5rem;
+  }
+}
