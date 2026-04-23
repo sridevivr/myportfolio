@@ -64,6 +64,16 @@ export const projects: Project[] = [
     repoUrl: 'https://github.com/sridevivr/cursor-cost-chain',
   },
   {
+    id: 'ai-startup-survival-tracker',
+    title: 'AI Startup Survival Tracker',
+    category: 'business',
+    screenshot: '/ai-survival-tracker.png',
+    description:
+      'A weekly-refreshing survival tracker for 577 AI startups from the 2023+ cohort. Scores each company on seven public signals and classifies them across sector and function. What\u2019s thriving, what\u2019s on the watchlist, what\u2019s dormant or pivoted.',
+    liveUrl: 'https://sridevivr.github.io/ai-startup-survival-tracker/',
+    repoUrl: 'https://github.com/sridevivr/ai-startup-survival-tracker',
+  },
+  {
     id: 'movie-tracker',
     title: 'Movie Tracker',
     category: 'personal',
