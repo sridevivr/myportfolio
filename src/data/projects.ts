@@ -54,6 +54,16 @@ export const projects: Project[] = [
     repoUrl: 'https://github.com/sridevivr/saas-pricing-intelligence',
   },
   {
+    id: 'cursor-cost-chain',
+    title: 'Cursor Cost Chain',
+    category: 'business',
+    screenshot: '/cursor-cost-analysis.png',
+    description:
+      'An interactive walkthrough of the AI cost chain from TSMC\u2019s silicon through Nvidia, hyperscalers, and model providers down to Cursor\u2019s flat subscription. Lays out the margin at each layer, and why the application layer gets squeezed from both sides.',
+    liveUrl: 'https://sridevivr.github.io/cursor-cost-chain/',
+    repoUrl: 'https://github.com/sridevivr/cursor-cost-chain',
+  },
+  {
     id: 'movie-tracker',
     title: 'Movie Tracker',
     category: 'personal',
