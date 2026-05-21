@@ -15,12 +15,12 @@
   }
 
   body {
-    @apply bg-white text-ink antialiased;
+    @apply bg-[#cfe2f3] text-ink antialiased;
     font-feature-settings: 'cv11', 'ss01', 'ss03';
   }
 
   .dark body {
-    @apply bg-neutral-950 text-neutral-100;
+    @apply bg-[#cfe2f3] text-ink;
   }
 
   /* Consistent heading rhythm; keeps layout tight without overriding Tailwind text sizes. */
