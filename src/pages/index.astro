@@ -1,6 +1,9 @@
 ---
 import BaseLayout from '~/layouts/BaseLayout.astro';
+import Nav from '~/components/Nav.astro';
 import Hero from '~/components/Hero.astro';
+import About from '~/components/About.astro';
+import Career from '~/components/Career.astro';
 import Projects from '~/components/Projects.astro';
 import Personal from '~/components/Personal.astro';
 import Contact from '~/components/Contact.astro';
@@ -11,8 +14,11 @@ import Footer from '~/components/Footer.astro';
   title="Sridevi Vijayaraghavan"
   description="Ex-VMware TPM with a Dartmouth MBA, building with AI. A gamified system-design curriculum, a museum about cinema and tech, a SaaS pricing intelligence dashboard, and more."
 >
+  <Nav />
   <main>
     <Hero />
+    <About />
+    <Career />
     <Projects />
     <Personal />
     <Contact />
