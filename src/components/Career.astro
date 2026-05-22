@@ -1,11 +1,92 @@
 ---
-// Career — section stub. Content arrives in a later phase.
+import ReleaseVisualization from './ReleaseVisualization.astro';
+
+const resumeUrl = 'https://drive.google.com/file/d/1eBx3r3dLR2Beakxv8zrqFZyH4j3U9k48/view?usp=sharing';
 ---
 
 <section id="career" class="section-anchor border-t border-neutral-200 dark:border-neutral-800">
   <div class="mx-auto max-w-content px-6 py-20 md:py-24">
     <p class="kicker mb-4">Career</p>
-    <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">Career</h2>
-    <p class="mt-4 max-w-2xl text-ink-muted dark:text-neutral-400">Content coming soon.</p>
+
+    <!-- Intro paragraph with resume link -->
+    <div class="max-w-2xl text-[1.05rem] leading-relaxed text-ink-muted dark:text-neutral-300">
+      <p>
+        My resume is right here to view if you're interested.
+        <a
+          href={resumeUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-accent hover:text-accent-hover dark:text-indigo-400 dark:hover:text-indigo-300 underline decoration-accent/40 underline-offset-2 transition"
+        >View resume</a>.
+        But I put in all this work, so it'll be interesting.
+      </p>
+    </div>
+
+    <!-- VMware subsection -->
+    <div class="mt-14">
+      <h3 class="font-mono text-sm uppercase tracking-[0.14em] text-ink-muted dark:text-neutral-400 mb-4">
+        VMware
+      </h3>
+      <div class="max-w-2xl text-[1.05rem] leading-relaxed text-ink-muted dark:text-neutral-300 mb-8">
+        <p>I was here for a while. I learned a LOT.</p>
+      </div>
+
+      <!-- Release visualization -->
+      <ReleaseVisualization />
+
+      <!-- Lessons intro -->
+      <div class="mt-10 max-w-2xl text-[1.05rem] leading-relaxed text-ink-muted dark:text-neutral-300">
+        <p>I ran a tonne of programs. Met extremely talented people. Received amazing mentorship. And learned some things:</p>
+      </div>
+
+      <!-- 4 lessons as storytelling paragraphs with bold lead-ins -->
+      <div class="mt-6 max-w-2xl space-y-5 text-[1.05rem] leading-relaxed text-ink-muted dark:text-neutral-300">
+        <p>
+          <strong class="font-semibold text-ink dark:text-neutral-100">Cross-functional leadership.</strong>
+          I know. But I put it here because, look at the number of launches. I certainly didn't do it by myself. The engineering horsepower, the product build, the marketing work, the legalese around all of it. This was a team effort.
+        </p>
+        <p>
+          <strong class="font-semibold text-ink dark:text-neutral-100">Stakeholder management.</strong>
+          It's no joke when customer success is screaming for help because all the client can see is a blue screen. Panic sets in. Priorities need to be rearranged. There's always someone who thinks this is a great opportunity to add additional fixes. Do you push back because engineering has other priorities? Do you agree because this will help with customer retention and ease their pain? In this situation, you can argue either way, but context can vary judgement wildly. I learned to ask questions, understand stakeholder motivations, and think through the best way to expand the pie.
+        </p>
+        <p>
+          <strong class="font-semibold text-ink dark:text-neutral-100">Process improvement.</strong>
+          Many people hate processes, and for good reason. Unnecessary ones bog down teams and rarely get adopted, especially if they're bureaucratic. I learned how to not just create new processes (and help get them adopted), but in some cases to pare them down. This came from understanding the needs of the team, how they were executing at that point, and identifying the bottlenecks that surfaced. Plus validating with stakeholders: if they thought it was pointless, then no. If they thought it was great but never used it, it was still pointless.
+        </p>
+        <p>
+          <strong class="font-semibold text-ink dark:text-neutral-100">Presenting to VPs and execs.</strong>
+          Nerve-wracking, but rewarding. It gave me the opportunity to understand how to zoom out and think about the bigger picture, because they would always question my judgement, data, and insights.
+        </p>
+      </div>
+
+      <!-- Transition para -->
+      <div class="mt-6 max-w-2xl text-[1.05rem] leading-relaxed text-ink-muted dark:text-neutral-300">
+        <p>This is what led me to pursue my MBA, because I was obsessed with: but WHY are we doing this, WHAT is our overall strategy, HOW does this help?</p>
+      </div>
+    </div>
+
+    <!-- Skygeni subsection -->
+    <div class="mt-14">
+      <h3 class="font-mono text-sm uppercase tracking-[0.14em] text-ink-muted dark:text-neutral-400 mb-4">
+        Skygeni (MBA Internship)
+      </h3>
+      <div class="max-w-2xl text-[1.05rem] leading-relaxed text-ink-muted dark:text-neutral-300 space-y-4">
+        <p>An early-stage AI revenue intelligence startup. I wanted to learn everything. Early-stage felt like the best place to do it, because you work closely with the founder, and because I'd been sequestered inside a conglomerate for a while.</p>
+        <p>There was no particular designation. My role was to understand the product and its offerings, who is most likely suffering from a problem we could solve, and how to share that with them. I was on customer calls, reading books on B2B sales and positioning, conducting market research, and experimenting. We introduced new features, built relationships and partnerships, added case studies, and redid the website.</p>
+      </div>
+    </div>
+
+    <!-- Now subsection -->
+    <div class="mt-14">
+      <h3 class="font-mono text-sm uppercase tracking-[0.14em] text-ink-muted dark:text-neutral-400 mb-4">
+        Now
+      </h3>
+      <div class="max-w-2xl text-[1.05rem] leading-relaxed text-ink-muted dark:text-neutral-300 space-y-4">
+        <p>It's a pure hustle at this point.</p>
+        <p>By day, I'm a Business Operations professional at another early-stage AI startup. A brilliant team, building in stealth. I've built a GTM motion, figured out how to run outreach, and gained a new respect for everything sales-related.</p>
+        <p>By night, and sometimes during the day, I'm talking to AI, building projects, learning as much as I can, as fast as I can.</p>
+      </div>
+    </div>
+
   </div>
 </section>

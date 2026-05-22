@@ -1,0 +1,209 @@
+---
+type ReleaseItem = { v: string; url: string | null };
+type ReleaseGroup = { lbl: string; items: ReleaseItem[] };
+type Lane = {
+  id: string;
+  label: string;
+  sublabel: string;
+  fullName: string;
+  color: string;
+  glow: string;
+  groups: ReleaseGroup[];
+};
+
+const stats = [
+  { num: '36+', label: 'releases shipped' },
+  { num: '3',   label: 'product lines' },
+  { num: '20',  label: 'products certified for accessibility' },
+  { num: '7',   label: 'awards' },
+];
+
+const lanes: Lane[] = [
+  {
+    id: 'nsx',
+    label: 'NSX',
+    sublabel: '15 releases',
+    fullName: 'NSX-T Data Center',
+    color: '#4263EB',
+    glow: 'rgba(66,99,235,0.3)',
+    groups: [
+      { lbl: '3.0.x', items: [
+        { v: '3.0.3',   url: 'https://techdocs.broadcom.com/us/en/vmware-cis/nsx/nsxt-dc/3-0/release-notes/vmware-nsx-t-data-center-3-0-3-release-notes.html' },
+        { v: '3.0.3.1', url: 'https://techdocs.broadcom.com/us/en/vmware-cis/nsx/nsxt-dc/3-0/release-notes/vmware-nsx-t-data-center-3-0-3-1-release-notes.html' },
+        { v: '3.0.3.2', url: 'https://techdocs.broadcom.com/us/en/vmware-cis/nsx/nsxt-dc/3-0/release-notes/vmware-nsx-t-data-center-3-0-3-2-release-notes.html' },
+      ]},
+      { lbl: '3.1.x', items: [
+        { v: '3.1.3.1', url: 'https://techdocs.broadcom.com/us/en/vmware-cis/nsx/nsxt-dc/3-1/release-notes/vmware-nsx-t-data-center-3-1-3-1-release-notes.html' },
+        { v: '3.1.3.3', url: 'https://techdocs.broadcom.com/us/en/vmware-cis/nsx/nsxt-dc/3-1/release-notes/vmware-nsx-t-data-center-3-1-3-3-release-notes.html' },
+        { v: '3.1.3.5', url: 'https://techdocs.broadcom.com/us/en/vmware-cis/nsx/nsxt-dc/3-1/release-notes/vmware-nsx-t-data-center-3-1-3-5-release-notes.html' },
+        { v: '3.1.3.6', url: 'https://techdocs.broadcom.com/us/en/vmware-cis/nsx/nsxt-dc/3-1/release-notes/vmware-nsx-t-data-center-3-1-3-6-release-notes.html' },
+        { v: '3.1.3.7', url: 'https://techdocs.broadcom.com/us/en/vmware-cis/nsx/nsxt-dc/3-1/release-notes/vmware-nsx-t-data-center-3-1-3-7-release-notes.html' },
+        { v: '3.1.3.8', url: 'https://techdocs.broadcom.com/us/en/vmware-cis/nsx/nsxt-dc/3-1/release-notes/vmware-nsx-t-data-center-3-1-3-8-release-notes.html' },
+      ]},
+      { lbl: '3.2.x', items: [
+        { v: '3.2.0',   url: 'https://techdocs.broadcom.com/us/en/vmware-cis/nsx/nsxt-dc/3-2/release-notes/vmware-nsxt-data-center-32-release-notes.html' },
+        { v: '3.2.1',   url: 'https://techdocs.broadcom.com/us/en/vmware-cis/nsx/nsxt-dc/3-2/release-notes/vmware-nsxt-data-center-321-release-notes.html' },
+        { v: '3.2.1.1', url: 'https://techdocs.broadcom.com/us/en/vmware-cis/nsx/nsxt-dc/3-2/release-notes/vmware-nsxt-data-center-3211-release-notes.html' },
+        { v: '3.2.1.2', url: 'https://techdocs.broadcom.com/us/en/vmware-cis/nsx/nsxt-dc/3-2/release-notes/vmware-nsxt-data-center-3212-release-notes.html' },
+        { v: '3.2.2',   url: 'https://techdocs.broadcom.com/us/en/vmware-cis/nsx/nsxt-dc/3-2/release-notes/vmware-nsxt-data-center-322-release-notes.html' },
+        { v: '3.2.3',   url: 'https://techdocs.broadcom.com/us/en/vmware-cis/nsx/nsxt-dc/3-2/release-notes/vmware-nsxt-data-center-323-release-notes.html' },
+      ]},
+    ],
+  },
+  {
+    id: 'ncp',
+    label: 'NCP',
+    sublabel: '12 releases',
+    fullName: 'NSX Container Plugin',
+    color: '#059669',
+    glow: 'rgba(5,150,105,0.3)',
+    groups: [
+      { lbl: '3.1.x', items: [
+        { v: '3.1.2',   url: 'https://techdocs.broadcom.com/us/en/vmware-cis/nsx/event-catalog/3-1.html' },
+        { v: '3.1.2.7', url: 'https://techdocs.broadcom.com/us/en/vmware-cis/nsx/event-catalog/3-1.html' },
+      ]},
+      { lbl: '3.2.x', items: [
+        { v: '3.2.0.1', url: 'https://techdocs.broadcom.com/us/en/vmware-cis/nsx/event-catalog/3-2.html' },
+        { v: '3.2.0.2', url: 'https://techdocs.broadcom.com/us/en/vmware-cis/nsx/event-catalog/3-2.html' },
+        { v: '3.2.0.3', url: 'https://techdocs.broadcom.com/us/en/vmware-cis/nsx/event-catalog/3-2.html' },
+        { v: '3.2.1.1', url: 'https://techdocs.broadcom.com/us/en/vmware-cis/nsx/event-catalog/3-2.html' },
+        { v: '3.2.1.2', url: 'https://techdocs.broadcom.com/us/en/vmware-cis/nsx/event-catalog/3-2.html' },
+        { v: '3.2.1.3', url: 'https://techdocs.broadcom.com/us/en/vmware-cis/nsx/event-catalog/3-2.html' },
+        { v: '3.2.1.5', url: 'https://techdocs.broadcom.com/us/en/vmware-cis/nsx/event-catalog/3-2.html' },
+      ]},
+      { lbl: '4.x', items: [
+        { v: '4.0.0', url: 'https://techdocs.broadcom.com/us/en/vmware-cis/nsx/event-catalog/4-0.html' },
+        { v: '4.0.1', url: 'https://techdocs.broadcom.com/us/en/vmware-cis/nsx/event-catalog/4-0.html' },
+        { v: '4.1.0', url: 'https://techdocs.broadcom.com/us/en/vmware-cis/nsx/event-catalog/4-1.html' },
+      ]},
+    ],
+  },
+  {
+    id: 'antrea',
+    label: 'Antrea',
+    sublabel: '9 releases',
+    fullName: 'Container Networking with Antrea',
+    color: '#EA580C',
+    glow: 'rgba(234,88,12,0.3)',
+    groups: [
+      { lbl: '1.1-1.2', items: [
+        { v: '1.1.0-0.11.1', url: null },
+        { v: '1.2.0-0.13.1', url: null },
+      ]},
+      { lbl: '1.3.x', items: [
+        { v: '1.3.0-1.2.2', url: null },
+        { v: '1.3.1-1.2.3', url: 'https://techdocs.broadcom.com/us/en/vmware-cis/nsx/container-networking/1-x/release-notes/vmware-container-networking-with-antrea-131123-release-notes.html' },
+        { v: '1.3.2-1.2.4', url: 'https://techdocs.broadcom.com/us/en/vmware-cis/nsx/container-networking/1-x/release-notes/vmware-container-networking-with-antrea-132124-release-notes.html' },
+      ]},
+      { lbl: '1.4-1.7', items: [
+        { v: '1.4.0', url: null },
+        { v: '1.5.0', url: 'https://techdocs.broadcom.com/us/en/vmware-cis/nsx/container-networking/1-x/release-notes/vmware-container-networking-with-antrea-150-release-notes.html' },
+        { v: '1.6.0', url: 'https://techdocs.broadcom.com/us/en/vmware-cis/nsx/container-networking/1-x/release-notes/vmware-container-networking-with-antrea-160-release-notes.html' },
+        { v: '1.7.0', url: 'https://techdocs.broadcom.com/us/en/vmware-cis/nsx/container-networking/1-x/release-notes/vmware-container-networking-with-antrea-170-release-notes.html' },
+      ]},
+    ],
+  },
+];
+
+// Compute dot positions for a lane (server-side, no JS at runtime needed).
+function calcPositions(groups: ReleaseGroup[], gap = 2.8) {
+  const out: { v: string; url: string | null; gl: string | null; slot: number }[] = [];
+  let slot = 0;
+  groups.forEach((g, gi) => {
+    if (gi > 0) slot += gap;
+    g.items.forEach((r, ri) => {
+      out.push({ ...r, gl: ri === 0 ? g.lbl : null, slot });
+      slot += 1;
+    });
+  });
+  const max = slot - 1;
+  return out.map(d => ({ ...d, pct: max > 0 ? (d.slot / max) * 100 : 0 }));
+}
+
+const processedLanes = lanes.map(lane => ({
+  ...lane,
+  dots: calcPositions(lane.groups),
+}));
+---
+
+<div class="space-y-4">
+  <!-- Stats block -->
+  <div class="rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 px-6 py-6 md:px-8 flex items-center w-full">
+    {stats.map((s, i) => (
+      <Fragment>
+        {i > 0 && <div class="w-px self-stretch bg-neutral-200 dark:bg-neutral-800"></div>}
+        <div class="flex-1 text-center px-2 md:px-4">
+          <span class="block text-2xl md:text-3xl font-semibold text-ink dark:text-neutral-100 tracking-tight leading-none mb-1.5">{s.num}</span>
+          <span class="block text-[11px] text-ink-subtle dark:text-neutral-500 leading-snug">{s.label}</span>
+        </div>
+      </Fragment>
+    ))}
+  </div>
+
+  <!-- Lanes card -->
+  <div class="rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 px-6 py-6 md:px-7 w-full">
+
+    <!-- Legend -->
+    <div class="flex flex-wrap gap-2 mb-7">
+      {lanes.map(lane => (
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neutral-200 dark:border-neutral-800 text-xs text-ink-muted dark:text-neutral-400">
+          <span class="h-2 w-2 rounded-full" style={`background:${lane.color}`}></span>
+          <span>{lane.fullName}</span>
+          <span class="font-semibold text-ink dark:text-neutral-100 ml-0.5">{lane.sublabel.split(' ')[0]}</span>
+        </div>
+      ))}
+    </div>
+
+    <!-- Lanes -->
+    {processedLanes.map(lane => (
+      <div class="flex items-center mb-0.5">
+        <!-- Lane label -->
+        <div class="w-[90px] shrink-0 pr-4">
+          <div class="text-[13px] font-semibold" style={`color:${lane.color}`}>{lane.label}</div>
+          <div class="text-[10px] text-ink-subtle dark:text-neutral-500 mt-0.5">{lane.sublabel}</div>
+        </div>
+        <!-- Track -->
+        <div class="flex-1 relative h-[68px] overflow-visible">
+          <!-- Track line -->
+          <div class="absolute left-0 right-0 top-[30px] h-px bg-neutral-200 dark:bg-neutral-800"></div>
+          <!-- Dots -->
+          {lane.dots.map(d => (
+            d.url ? (
+              <a
+                href={d.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="dot-link absolute top-[30px] -translate-y-1/2 z-[2] group"
+                style={`left:${d.pct}%; transform:translate(-50%,-50%); --lane-color:${lane.color}; --lane-glow:${lane.glow}`}
+              >
+                <span class="dot block h-3 w-3 rounded-full border-2 transition-transform duration-200" style={`background:${lane.color}; border-color:${lane.color}`}></span>
+                <span class={`tooltip absolute bottom-full mb-2 px-2 py-1 rounded text-[10px] whitespace-nowrap bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 text-ink dark:text-neutral-200 shadow-md opacity-0 group-hover:opacity-100 transition-opacity z-30 ${d.pct > 87 ? 'right-0' : d.pct < 8 ? 'left-0' : 'left-1/2 -translate-x-1/2'}`}>{d.v}</span>
+                {d.gl && (
+                  <span class="absolute top-[16px] left-1/2 -translate-x-1/2 text-[9px] tracking-wider text-ink-subtle/60 dark:text-neutral-600 whitespace-nowrap pointer-events-none">{d.gl}</span>
+                )}
+              </a>
+            ) : (
+              <div
+                class="absolute top-[30px] -translate-y-1/2 z-[2]"
+                style={`left:${d.pct}%; transform:translate(-50%,-50%);`}
+              >
+                <span class="block h-3 w-3 rounded-full border-2 opacity-35" style={`background:transparent; border-color:${lane.color}`}></span>
+                {d.gl && (
+                  <span class="absolute top-[16px] left-1/2 -translate-x-1/2 text-[9px] tracking-wider text-ink-subtle/60 dark:text-neutral-600 whitespace-nowrap pointer-events-none">{d.gl}</span>
+                )}
+              </div>
+            )
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  /* Hover effects for linked dots, pure CSS, no JS needed */
+  .dot-link:hover .dot {
+    transform: scale(1.45);
+    box-shadow: 0 0 0 4px var(--lane-glow), 0 0 12px var(--lane-glow);
+  }
+</style>
