@@ -1,6 +1,9 @@
 ---
 import { projects } from '~/data/projects';
 import ProjectCard from './ProjectCard.astro';
+
+const products = projects.filter((p) => p.category === 'product');
+const business = projects.filter((p) => p.category === 'business');
 ---
 
 <section id="projects" class="section-anchor">
@@ -10,10 +13,26 @@ import ProjectCard from './ProjectCard.astro';
       Things I've built with AI tools
     </h2>
 
-    <div class="mt-10 grid gap-6 md:grid-cols-2">
-      {projects.map((project) => (
-        <ProjectCard project={project} />
-      ))}
-    </div>
+    {products.length > 0 && (
+      <div class="mt-12">
+        <p class="font-mono text-sm uppercase tracking-[0.14em] text-ink-muted dark:text-neutral-400 mb-2">
+          Product
+        </p>
+        <div>
+          {products.map((project) => <ProjectCard project={project} />)}
+        </div>
+      </div>
+    )}
+
+    {business.length > 0 && (
+      <div class="mt-16">
+        <p class="font-mono text-sm uppercase tracking-[0.14em] text-ink-muted dark:text-neutral-400 mb-2">
+          Business tools
+        </p>
+        <div>
+          {business.map((project) => <ProjectCard project={project} />)}
+        </div>
+      </div>
+    )}
   </div>
 </section>
