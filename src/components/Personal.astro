@@ -1,142 +1,156 @@
 ---
-// Personal — reading, coffee, writing. A bit more about me section.
-//
-// NOTE (Sridevi): book covers — save JPGs at
-//   public/books/project-hail-mary.jpg
-//   public/books/the-tainted-cup.jpg
-// (grab covers from Goodreads, Amazon, or Open Library). Until those files
-// exist, the book cover slots will show a placeholder.
+const goodreadsUrl = 'https://www.goodreads.com/user/show/26064783-sridevi-raghavan';
+
+const personalProjects = [
+  {
+    title: 'Movie Tracker',
+    description: "I wanted a place to log all my friends' recommendations, plus some analytics around how much TV I watch.",
+    screenshot: '/Movie-tracker.png',
+    liveUrl: 'https://movie-tracker-sridevivr.replit.app/',
+  },
+  {
+    title: 'Silver Nitrate & Silicon',
+    description: 'An experience to explore how cinema and technology have influenced each other.',
+    screenshot: '/Silver-nitrate.png',
+    liveUrl: 'https://silvernitrate-and-silicon.vijayaraghavansridevi.workers.dev/',
+  },
+  {
+    title: 'System Design Quest',
+    description: 'A Duolingo-style game for the system design concepts behind every app you use. Nine units, 54 lessons, each one grounded in a real company scenario and an everyday analogy.',
+    screenshot: '/System-design-quest.png',
+    liveUrl: 'https://system-design-quest.vijayaraghavansridevi.workers.dev/',
+  },
+];
 ---
 
 <section id="personal" class="section-anchor border-t border-neutral-200 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-950">
   <div class="mx-auto max-w-content px-6 py-20 md:py-24">
     <p class="kicker mb-4">Personal</p>
     <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">
-      A bit more about me
+      Hello from the other side
     </h2>
+    <p class="mt-2 text-sm italic text-ink-subtle dark:text-neutral-500">
+      best read as you sing the Adele song
+    </p>
 
-    <div class="mt-12 grid gap-10 md:gap-8 md:grid-cols-3">
+    <!-- Intro paragraph: dressmaking + ADHD story -->
+    <div class="mt-8 max-w-2xl text-[1.05rem] leading-relaxed text-ink-muted dark:text-neutral-300">
+      <p>
+        I'm a straight-forward person, and generally easy to talk to. I love learning new things, sometimes they're connected, sometimes they are random. It's an ADHD thing. For example, I got obsessed with dress-making, and "borrowed" a mannequin from my aunt. Assembled five dresses, did a photoshoot (yes, with a mannequin). After that, it just scared the bejesus out of everyone in the house at night.
+      </p>
+    </div>
 
-      <!-- Reading -->
-      <div>
-        <h3 class="font-mono text-sm uppercase tracking-[0.14em] text-ink-muted dark:text-neutral-400 mb-4">
-          Reading
-        </h3>
-        <p class="text-ink-muted dark:text-neutral-300 leading-relaxed mb-5">
-          I read a lot &mdash; fiction mostly, plus a steady drip of non-fiction. My
+    <!-- Goodreads transition paragraph -->
+    <div class="mt-5 max-w-2xl text-[1.05rem] leading-relaxed text-ink-muted dark:text-neutral-300">
+      <p>
+        I enjoy reading. Mostly fiction. My
+        <a
+          href={goodreadsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-accent hover:text-accent-hover dark:text-indigo-400 dark:hover:text-indigo-300 underline decoration-accent/40 underline-offset-2 transition"
+        >Goodreads</a>
+        is right here. Connect with me and let's watch each other's reading habits silently (if that's how you want to engage).
+      </p>
+    </div>
+
+    <!-- Reading subsection -->
+    <div class="mt-12">
+      <h3 class="text-lg md:text-xl font-semibold text-ink dark:text-neutral-100 mb-6">
+        Reading
+      </h3>
+
+      <!-- Book covers, 2 books -->
+      <div class="flex gap-4 mb-6">
+        <figure class="flex flex-col gap-2 w-24">
+          <div class="aspect-[2/3] overflow-hidden rounded-sm bg-neutral-200 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-800">
+            <img
+              src="/books/Project-Hail-Mary.png"
+              alt="Project Hail Mary by Andy Weir"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <figcaption class="text-xs leading-snug text-ink-muted dark:text-neutral-400">
+            Project Hail Mary<br/>
+            <span class="text-ink-subtle dark:text-neutral-500">Andy Weir</span>
+          </figcaption>
+        </figure>
+        <figure class="flex flex-col gap-2 w-24">
+          <div class="aspect-[2/3] overflow-hidden rounded-sm bg-neutral-200 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-800">
+            <img
+              src="/books/Tainted-Cup.png"
+              alt="The Tainted Cup by Robert Jackson Bennett"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <figcaption class="text-xs leading-snug text-ink-muted dark:text-neutral-400">
+            The Tainted Cup<br/>
+            <span class="text-ink-subtle dark:text-neutral-500">Robert J. Bennett</span>
+          </figcaption>
+        </figure>
+      </div>
+
+      <!-- Prose about the 2 covered books -->
+      <div class="max-w-2xl text-[1.05rem] leading-relaxed text-ink-muted dark:text-neutral-300 space-y-4">
+        <p>
+          I recently read The Tainted Cup and told everyone who would listen about it. Since you're here: read it, it's awesome.
+        </p>
+        <p>
+          I also read Project Hail Mary, a wonderful book. Still putting off watching the movie though.
+        </p>
+        <p>
+          I try and push myself to read non-fiction. I've been reading The Mom Test because my CEO recommended it. And I read Secrets of Sand Hill Road last year (my VC mentor suggested it).
+        </p>
+      </div>
+    </div>
+
+    <!-- Thank-you closing -->
+    <div class="mt-12 max-w-2xl text-[1.05rem] leading-relaxed text-ink-muted dark:text-neutral-300">
+      <p>
+        This "portfolio" is prose heavy. And you've stuck around till here. Thank you :)
+      </p>
+    </div>
+
+    <!-- Things I've made for myself subsection -->
+    <div class="mt-12">
+      <h3 class="text-lg md:text-xl font-semibold text-ink dark:text-neutral-100 mb-6">
+        Things I've made for myself
+      </h3>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {personalProjects.map((project) => (
           <a
-            href="https://www.goodreads.com/user/show/26064783-sridevi-raghavan"
+            href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            class="text-accent hover:text-accent-hover dark:text-indigo-400 dark:hover:text-indigo-300 underline decoration-accent/40 underline-offset-2"
-          >Goodreads</a>
-          has the full archive.
-        </p>
-
-        <p class="font-mono text-xs uppercase tracking-[0.14em] text-ink-subtle dark:text-neutral-500 mb-3">
-          Recently finished
-        </p>
-        <div class="flex gap-3">
-          <figure class="flex flex-col gap-2 w-24">
-            <div class="aspect-[2/3] overflow-hidden rounded-sm bg-neutral-200 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-800">
+            class="group flex flex-col rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 overflow-hidden hover:border-neutral-300 dark:hover:border-neutral-700 transition"
+          >
+            <div class="aspect-[16/10] overflow-hidden bg-neutral-100 dark:bg-neutral-950">
               <img
-                src="/books/Project-Hail-Mary.png"
-                alt="Project Hail Mary by Andy Weir"
-                class="w-full h-full object-cover"
+                src={project.screenshot}
+                alt={`${project.title} screenshot`}
+                class="w-full h-full object-cover transition duration-300 group-hover:scale-[1.02]"
                 loading="lazy"
               />
             </div>
-            <figcaption class="text-xs leading-snug text-ink-muted dark:text-neutral-400">
-              Project Hail Mary<br/>
-              <span class="text-ink-subtle dark:text-neutral-500">Andy Weir</span>
-            </figcaption>
-          </figure>
-          <figure class="flex flex-col gap-2 w-24">
-            <div class="aspect-[2/3] overflow-hidden rounded-sm bg-neutral-200 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-800">
-              <img
-                src="/books/Tainted-Cup.png"
-                alt="The Tainted Cup by Robert Jackson Bennett"
-                class="w-full h-full object-cover"
-                loading="lazy"
-              />
-            </div>
-            <figcaption class="text-xs leading-snug text-ink-muted dark:text-neutral-400">
-              The Tainted Cup<br/>
-              <span class="text-ink-subtle dark:text-neutral-500">Robert J. Bennett</span>
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-
-      <!-- Coffee -->
-      <div>
-        <h3 class="font-mono text-sm uppercase tracking-[0.14em] text-ink-muted dark:text-neutral-400 mb-4">
-          Coffee
-        </h3>
-        <div class="aspect-[4/3] overflow-hidden rounded-md bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 mb-4">
-          <img
-            src="/coffee.jpeg"
-            alt="South Indian filter coffee"
-            class="w-full h-full object-cover"
-            loading="lazy"
-          />
-        </div>
-        <p class="text-ink-muted dark:text-neutral-300 leading-relaxed">
-          South Indian filter coffee, almost daily. Steel tumbler, dabarah,
-          thick decoction, boiling milk. Nothing else comes close.
-        </p>
-      </div>
-
-      <!-- Writing -->
-      <div>
-        <h3 class="font-mono text-sm uppercase tracking-[0.14em] text-ink-muted dark:text-neutral-400 mb-4">
-          Writing
-        </h3>
-        <p class="text-ink-muted dark:text-neutral-300 leading-relaxed mb-5">
-          Two places I publish:
-        </p>
-        <ul class="space-y-3">
-          <li>
-            <a
-              href="https://themoneywellnessstudio.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="flex items-center gap-3 rounded-md border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 p-4 hover:border-neutral-300 dark:hover:border-neutral-700 transition"
-            >
-              <img
-                src="/logo/the-money-wellness-studio.png"
-                alt="The Money Wellness Studio logo"
-                class="h-10 w-10 rounded object-contain shrink-0"
-                loading="lazy"
-              />
-              <span class="flex flex-col min-w-0">
-                <span class="text-sm font-semibold text-ink dark:text-neutral-100">
-                  The Money Wellness Studio
-                </span>
-                <span class="mt-0.5 text-xs text-ink-muted dark:text-neutral-400">
-                  Personal finance, written for real life.
-                </span>
+            <div class="flex flex-col flex-1 p-5">
+              <h4 class="text-base font-semibold text-ink dark:text-neutral-100">
+                {project.title}
+              </h4>
+              <p class="mt-2 text-sm leading-relaxed text-ink-muted dark:text-neutral-400 flex-1">
+                {project.description}
+              </p>
+              <span class="mt-4 text-sm font-medium text-accent dark:text-indigo-400 inline-flex items-center gap-1.5">
+                Try it live
+                <span aria-hidden="true">→</span>
               </span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://impulsedinertia.substack.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="block rounded-md border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 p-4 hover:border-neutral-300 dark:hover:border-neutral-700 transition"
-            >
-              <p class="text-sm font-semibold text-ink dark:text-neutral-100">
-                Impulsed Inertia
-              </p>
-              <p class="mt-1 text-xs text-ink-muted dark:text-neutral-400">
-                Notes from building with AI &mdash; what works, what breaks.
-              </p>
-            </a>
-          </li>
-        </ul>
+            </div>
+          </a>
+        ))}
       </div>
-
     </div>
+
   </div>
 </section>
