@@ -4,7 +4,7 @@ import type { Project } from '~/data/projects';
 type Props = { project: Project };
 const { project } = Astro.props;
 
-// Category pill styling — two categories.
+// Category pill styling, two categories.
 const categoryClasses: Record<Project['category'], string> = {
   product:  'bg-emerald-100 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300',
   business: 'bg-blue-100 text-blue-700 dark:bg-blue-950/60 dark:text-blue-300',
@@ -15,7 +15,6 @@ const categoryLabel: Record<Project['category'], string> = {
 };
 
 const isProduct = project.category === 'product';
-const designs = project.designScreenshots ?? [];
 ---
 
 <article class="flex flex-col md:flex-row items-start gap-6 py-6 border-t border-neutral-200 dark:border-neutral-800">
@@ -44,9 +43,31 @@ const designs = project.designScreenshots ?? [];
       {project.description}
     </p>
 
-    {isProduct ? (
-      <details class="mt-4">
-        <summary class="flex items-center justify-between gap-3 text-sm">
+    {project.techStack.length > 0 && (
+      <div class="mt-3 flex flex-wrap gap-1.5">
+        {project.techStack.map((tech) => (
+          <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-neutral-100 dark:bg-neutral-800 text-ink-muted dark:text-neutral-400">{tech}</span>
+        ))}
+      </div>
+    )}
+
+    <details class="mt-4">
+      <summary class="flex items-center justify-between gap-3 text-sm">
+        <span class="flex items-center gap-4">
+          {!isProduct && (project.liveUrl ? (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onclick="event.stopPropagation()"
+              class="inline-flex items-center gap-1.5 font-medium text-accent hover:text-accent-hover dark:text-indigo-400 dark:hover:text-indigo-300 transition"
+            >
+              Try it live
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          ) : (
+            <span class="font-medium text-ink-subtle dark:text-neutral-500">Live demo coming soon</span>
+          ))}
           <a
             href={project.repoUrl}
             target="_blank"
@@ -57,61 +78,49 @@ const designs = project.designScreenshots ?? [];
             Source
             <span aria-hidden="true">&rarr;</span>
           </a>
-          <span class="inline-flex items-center gap-1.5 font-medium text-ink-muted dark:text-neutral-400">
-            View designs
-            <svg
-              class="chevron transition-transform duration-200"
-              xmlns="http://www.w3.org/2000/svg"
-              width="16" height="16" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
-            >
-              <path d="m6 9 6 6 6-6"/>
-            </svg>
-          </span>
-        </summary>
-
-        <div class="mt-4 flex gap-4 overflow-x-auto pb-2">
-          {designs.map((shot) => (
-            <div class="flex-shrink-0 w-[140px] aspect-[9/19.5] rounded-[1.75rem] border-4 border-neutral-900 dark:border-neutral-100 overflow-hidden bg-neutral-100 dark:bg-neutral-900">
-              <img
-                src={shot}
-                alt={`${project.title} design screenshot`}
-                class="w-full h-full object-cover"
-                loading="lazy"
-              />
-            </div>
-          ))}
-        </div>
-      </details>
-    ) : (
-      <div class="mt-4 flex items-center gap-4 text-sm">
-        {project.liveUrl ? (
-          <a
-            href={project.liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-1.5 font-medium text-accent hover:text-accent-hover dark:text-indigo-400 dark:hover:text-indigo-300 transition"
+        </span>
+        <span class="inline-flex items-center gap-1.5 font-medium text-ink-muted dark:text-neutral-400">
+          Expand
+          <svg
+            class="chevron transition-transform duration-200"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16" height="16" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
           >
-            Try it live
-            <span aria-hidden="true">&rarr;</span>
-          </a>
-        ) : (
-          <span class="font-medium text-ink-subtle dark:text-neutral-500">
-            Live demo coming soon
-          </span>
+            <path d="m6 9 6 6 6-6"/>
+          </svg>
+        </span>
+      </summary>
+
+      <div class="mt-4 space-y-6">
+        {isProduct && project.designScreenshots && project.designScreenshots.length > 0 && (
+          <div class="flex gap-4 overflow-x-auto pb-2">
+            {project.designScreenshots.map((src) => (
+              <div class="flex-shrink-0 w-[140px] aspect-[9/19.5] rounded-[1.75rem] border-4 border-neutral-900 dark:border-neutral-100 overflow-hidden bg-neutral-100 dark:bg-neutral-900">
+                <img src={src} class="w-full h-full object-cover" alt={`${project.title} screen`} loading="lazy" />
+              </div>
+            ))}
+          </div>
         )}
-        <a
-          href={project.repoUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-1.5 font-medium text-ink-muted dark:text-neutral-400 hover:text-ink dark:hover:text-neutral-100 transition"
-        >
-          Source
-          <span aria-hidden="true">&rarr;</span>
-        </a>
+        <div class="text-[0.95rem] leading-relaxed text-ink-muted dark:text-neutral-300">
+          <p>{project.longDescription}</p>
+        </div>
+        {project.lessonsLearned && project.lessonsLearned.length > 0 && (
+          <div>
+            <h4 class="text-sm font-semibold text-ink dark:text-neutral-100 mb-3">What I learned</h4>
+            <ul class="space-y-2 text-[0.95rem] leading-relaxed text-ink-muted dark:text-neutral-300">
+              {project.lessonsLearned.map((lesson) => (
+                <li class="flex gap-2">
+                  <span class="text-ink-subtle dark:text-neutral-500 shrink-0">→</span>
+                  <span>{lesson}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
-    )}
+    </details>
   </div>
 </article>
 
